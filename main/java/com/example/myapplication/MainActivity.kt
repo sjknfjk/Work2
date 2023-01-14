@@ -2,11 +2,14 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+    val textView = findViewById<View>(R.id.brief) as TextView
+    val imageView = findViewById<View>(R.id.information)
     private val upList = ArrayList<up>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
+
     private fun initUp() {
         repeat(1) {
             upList.add(up("林慕宸", R.drawable.up1))
@@ -27,4 +31,13 @@ class MainActivity : AppCompatActivity() {
             upList.add(up("林迪", R.drawable.up3))
         }
     }
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.button -> {
+                imageView.setImageResource(R.drawable.pig)
+            //为什么《第一行代码》中复制过来会报错啊
+            }
+        }
+    }
+
 }
