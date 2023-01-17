@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class System {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         while (true) {
-            java.lang.System.out.println("---欢迎使用学生管理系统---");//student表会和class表同时增删改
+            java.lang.System.out.println("学生管理系统");//student表会和class表同时增删改
             java.lang.System.out.println("1-添加学生");
             java.lang.System.out.println("2-删除学生");
             java.lang.System.out.println("3-修改学生信息");
             java.lang.System.out.println("4-退出系统");
             java.lang.System.out.println("请输入指令:");
             Scanner scanner = new Scanner(java.lang.System.in);
-            String cmd = scanner.nextLine();
-            switch (cmd) {
+            String s = scanner.nextLine();
+            switch (s) {
                 case "1":
                     addStudent();
                     break;
@@ -149,7 +149,7 @@ public class System {
         Connection connection = DriverManager.getConnection(dburl, user, password);
         Statement statement = connection.createStatement();
 
-        String sql1 = "UPDATE studend SET id = "+id2+",name = '"+name2+"',age="+age2+",sex='"+sex2+"' WHERE id = "+id1+";";
+        String sql1 = "UPDATE student SET id = "+id2+",name = '"+name2+"',age="+age2+",sex='"+sex2+"' WHERE id = "+id1+";";
         String sql2 = "UPDATE class SET id = "+id2+",name = '"+name2+"',age="+age2+",sex='"+sex2+"',Class='"+Class2+"',time='"+time2+"' WHERE id = "+id1+";";
         statement.executeUpdate(sql1);
         statement.executeUpdate(sql2);
